@@ -6,7 +6,13 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000"],
+    origin: [
+      "https://schoolrab.onrender.com",
+      "http://localhost:3000",
+      "https://schoolrab.vercel.app",
+    ],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
     credentials: true,
   },
 });
